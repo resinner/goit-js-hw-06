@@ -1,4 +1,5 @@
 const counter = (parent) => {
+    console.log(parent.childElementCount);
   return parent.childElementCount;
 };
 const message = (elements) => {
