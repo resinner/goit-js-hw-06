@@ -8,24 +8,24 @@ const ingredients = [
 ];
 
 const ingredientsContainer = document.querySelector("ul#ingredients");
+let containerItemsFragment = document.createDocumentFragment();
 
-const template = ingredients.reduce(
-  (acc, item) => (acc += `<li class="item">${item}</li>`),
-  ""
-);
+for (let ingridient of ingredients) {
+  const li = document.createElement("li");
+  li.innerText = ingridient;
+  li.classList.add("item");
+  containerItemsFragment.appendChild(li);
+}
 
-ingredientsContainer.innerHTML = template;
+ingredientsContainer.appendChild(containerItemsFragment);
 
 // other method
 
 // const ingredientsContainer = document.querySelector("ul#ingredients");
-// let containerItemsFragment = document.createDocumentFragment();
 
-// for (let ingridient of ingredients) {
-//   const li = document.createElement("li");
-//   li.innerText = ingridient;
-//   li.classList.add("item");
-//   containerItemsFragment.appendChild(li);
-// }
+// const template = ingredients.reduce(
+//   (acc, item) => (acc += `<li class="item">${item}</li>`),
+//   ""
+// );
 
-// ingredientsContainer.appendChild(containerItemsFragment);
+// ingredientsContainer.innerHTML = template;
