@@ -18,6 +18,6 @@ const categoryElementsCount = categoriesItems.reduce((acc, el) => {
 }, {});
 
 for (let key in categoryElementsCount) {
-  console.log("Category:", key);
-  console.log("Elements:", categoryElementsCount[key]);
+  console.log(`Category: ${key}`);
+  console.log(`Elements: ${categoryElementsCount[key]}`);
 }
